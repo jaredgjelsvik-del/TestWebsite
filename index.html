@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ec">
+  <meta name="description" content="Thoughtful lawn care for greener, healthier yards. Get a straightforward quote from Fieldnote Lawn Co.">
+  <title>Fieldnote Lawn Co. | A better kind of lawn care</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f5f4ec;
+      --ink: #20382d;
+      --muted: #637168;
+      --green: #244f38;
+      --lime: #d9ef78;
+      --line: #d9ddd2;
+      --white: #fffefa;
+      --serif: "DM Serif Display", Georgia, serif;
+      --sans: "DM Sans", "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, select { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+
+    .site-header {
+      height: 82px;
+      padding: 0 6.4%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      background: var(--paper);
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      color: var(--paper);
+      background: var(--green);
+      border-radius: 50%;
+    }
+    .brand-mark svg { width: 19px; height: 19px; }
+    .nav-links { display: flex; align-items: center; gap: 34px; }
+    .nav-links a, .header-phone {
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .nav-links a { color: #536157; transition: color .2s ease; }
+    .nav-links a:hover, .header-phone:hover { color: #527a37; }
+    .header-actions { display: flex; align-items: center; gap: 24px; }
+    .header-phone { white-space: nowrap; }
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 19px;
+      color: var(--white);
+      background: var(--green);
+      border-radius: 3px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: background .2s ease, transform .2s ease;
+    }
+    .header-cta:hover, .button-dark:hover { background: #183a28; transform: translateY(-1px); }
+
+    .hero {
+      position: relative;
+      min-height: 590px;
+      height: min(70vh, 760px);
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      isolation: isolate;
+      color: white;
+      background: #365a3b;
+    }
+    .hero-image {
+      position: absolute;
+      z-index: -2;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 54%;
+      animation: image-arrive 1.1s ease-out both;
+    }
+    .hero::after {
+      position: absolute;
+      z-index: -1;
+      content: "";
+      inset: 0;
+      background: rgba(14, 33, 23, .42);
+    }
+    .hero-content {
+      width: min(720px, 72%);
+      margin-left: 10.4%;
+      padding: 72px 0 92px;
+      animation: rise-in .65s .12s ease-out both;
+    }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 19px;
+      color: var(--lime);
+      font-size: 11px;
+      line-height: 1.4;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { width: 24px; height: 1px; content: ""; background: currentColor; }
+    h1, h2, h3, p { margin-top: 0; }
+    .hero h1 {
+      max-width: 690px;
+      margin-bottom: 20px;
+      font-family: var(--serif);
+      font-size: 76px;
+      line-height: .99;
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+    .hero-copy {
+      max-width: 470px;
+      margin-bottom: 31px;
+      color: rgba(255,255,255,.88);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+    .hero-actions { display: flex; align-items: center; gap: 25px; }
+    .button-lime, .button-dark {
+      min-height: 52px;
+      padding: 0 23px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      border: 0;
+      border-radius: 3px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .2s ease, color .2s ease, transform .2s ease;
+    }
+    .button-lime { color: #243a24; background: var(--lime); }
+    .button-lime:hover { background: #e8fa9e; transform: translateY(-1px); }
+    .button-lime svg, .button-dark svg { width: 16px; height: 16px; }
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: white;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .text-link svg { width: 15px; height: 15px; transition: transform .2s ease; }
+    .text-link:hover svg { transform: translateX(3px); }
+    .hero-note {
+      position: absolute;
+      right: 6.4%;
+      bottom: 31px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255,255,255,.9);
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .note-line { width: 31px; height: 1px; background: var(--lime); }
+
+    .trust-strip {
+      min-height: 80px;
+      padding: 20px 10.4%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      border-bottom: 1px solid var(--line);
+    }
+    .trust-lead { margin: 0; font-size: 13px; font-weight: 700; }
+    .trust-items { display: flex; align-items: center; gap: 36px; }
+    .trust-item { display: flex; align-items: center; gap: 9px; color: #536157; font-size: 12px; font-weight: 600; white-space: nowrap; }
+    .check {
+      width: 18px;
+      height: 18px;
+      display: grid;
+      place-items: center;
+      color: var(--green);
+      background: #e5e9d9;
+      border-radius: 50%;
+    }
+    .check svg { width: 11px; height: 11px; }
+
+    .services {
+      padding: 102px 10.4% 110px;
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 8%;
+      align-items: start;
+    }
+    .section-heading .eyebrow { color: #618342; }
+    .section-heading h2, .quote-copy h2 {
+      max-width: 480px;
+      margin-bottom: 17px;
+      font-family: var(--serif);
+      font-size: 48px;
+      line-height: 1.05;
+      font-weight: 400;
+    }
+    .section-intro { max-width: 390px; margin-bottom: 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
+    .service-list { border-top: 1px solid var(--line); }
+    .service-row {
+      min-height: 91px;
+      padding: 20px 0;
+      display: grid;
+      grid-template-columns: 42px 1fr 24px;
+      align-items: center;
+      gap: 15px;
+      border-bottom: 1px solid var(--line);
+    }
+    .service-number { color: #7d8a78; font-family: var(--serif); font-size: 17px; }
+    .service-row h3 { margin: 0 0 4px; font-size: 15px; font-weight: 700; }
+    .service-row p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
+    .service-arrow { color: #628243; font-size: 19px; text-align: right; }
+
+    .quote-section {
+      padding: 87px 10.4% 92px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10%;
+      align-items: center;
+      color: var(--white);
+      background: var(--green);
+    }
+    .quote-copy .eyebrow { color: var(--lime); }
+    .quote-copy h2 { max-width: 450px; margin-bottom: 16px; }
+    .quote-copy > p:last-child { max-width: 400px; margin: 0; color: rgba(255,255,255,.76); font-size: 14px; line-height: 1.8; }
+    .quote-form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 13px; }
+    .field { display: grid; gap: 7px; }
+    .field-wide { grid-column: 1 / -1; }
+    .field label { color: rgba(255,255,255,.82); font-size: 11px; font-weight: 600; }
+    .field input, .field select {
+      width: 100%;
+      min-height: 47px;
+      padding: 0 13px;
+      color: var(--ink);
+      background: var(--white);
+      border: 1px solid transparent;
+      border-radius: 2px;
+      outline: none;
+      font-size: 13px;
+    }
+    .field input:focus, .field select:focus { border-color: var(--lime); box-shadow: 0 0 0 2px rgba(217,239,120,.22); }
+    .form-submit { grid-column: 1 / -1; justify-self: start; margin-top: 2px; }
+    .form-message { grid-column: 1 / -1; min-height: 18px; margin: -5px 0 0; color: var(--lime); font-size: 12px; }
+
+    .site-footer {
+      min-height: 82px;
+      padding: 20px 6.4%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      color: #68746a;
+      font-size: 11px;
+    }
+    .footer-brand { color: var(--ink); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a:hover { color: var(--green); }
+
+    @keyframes rise-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes image-arrive { from { transform: scale(1.025); } to { transform: scale(1); } }
+    @media (max-width: 900px) {
+      .site-header { padding: 0 5%; }
+      .nav-links { gap: 20px; }
+      .header-phone { display: none; }
+      .hero-content { width: 78%; margin-left: 8%; }
+      .hero h1 { font-size: 64px; }
+      .trust-strip { padding-right: 8%; padding-left: 8%; }
+      .trust-items { gap: 16px; }
+      .services, .quote-section { padding-right: 8%; padding-left: 8%; gap: 6%; }
+      .section-heading h2, .quote-copy h2 { font-size: 42px; }
+    }
+    @media (max-width: 640px) {
+      .site-header { height: 70px; padding: 0 20px; }
+      .brand { gap: 8px; font-size: 14px; }
+      .brand-mark { width: 31px; height: 31px; }
+      .nav-links { display: none; }
+      .header-actions { gap: 0; }
+      .header-cta { min-height: 41px; padding: 0 13px; font-size: 12px; }
+      .hero { height: 620px; min-height: 0; align-items: flex-end; }
+      .hero-image { object-position: 59% center; }
+      .hero::after { background: rgba(14, 33, 23, .5); }
+      .hero-content { width: auto; margin: 0; padding: 0 25px 91px; }
+      .eyebrow { margin-bottom: 16px; font-size: 10px; }
+      .hero h1 { max-width: 480px; margin-bottom: 15px; font-size: 52px; line-height: 1.02; }
+      .hero-copy { max-width: 390px; margin-bottom: 23px; font-size: 14px; line-height: 1.65; }
+      .hero-actions { align-items: flex-start; flex-direction: column; gap: 17px; }
+      .button-lime { min-height: 49px; }
+      .hero-note { right: 24px; bottom: 22px; font-size: 10px; }
+      .trust-strip { padding: 20px 24px; align-items: flex-start; flex-direction: column; gap: 15px; }
+      .trust-items { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 8px; }
+      .trust-item { font-size: 11px; }
+      .services { padding: 69px 24px 76px; grid-template-columns: 1fr; gap: 35px; }
+      .section-heading h2, .quote-copy h2 { font-size: 40px; }
+      .service-row { min-height: 83px; grid-template-columns: 30px 1fr 20px; gap: 10px; }
+      .quote-section { padding: 68px 24px 72px; grid-template-columns: 1fr; gap: 31px; }
+      .quote-form { gap: 14px 10px; }
+      .field input, .field select { min-height: 45px; padding: 0 10px; font-size: 12px; }
+      .button-lime.form-submit { width: 100%; }
+      .site-footer { padding: 22px 24px; align-items: flex-start; flex-direction: column; }
+      .footer-links { gap: 16px; }
+    }
+    @media (max-width: 380px) {
+      .hero h1 { font-size: 46px; }
+      .quote-form { grid-template-columns: 1fr; }
+      .field-wide, .form-submit, .form-message { grid-column: 1; }
+      .trust-items { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Fieldnote Lawn Co. home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V9m0 7c-5 0-7-3-7-7 4 0 7 2 7 7Zm0-3c0-5 3-8 8-8 0 5-3 8-8 8Z"/></svg>
+      </span>
+      <span>fieldnote <span style="font-weight:500">lawn co.</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#services">Services</a>
+      <a href="#approach">Our approach</a>
+      <a href="#quote">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a class="header-phone" href="tel:+15550148270">(555) 014-8270</a>
+      <a class="header-cta" href="#quote">Get a free quote</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero-image" src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=2200&q=85" alt="A freshly maintained green lawn in warm afternoon light">
+      <div class="hero-content">
+        <p class="eyebrow">Good work. Good growth.</p>
+        <h1 id="hero-title">A little greener.<br>A lot easier.</h1>
+        <p class="hero-copy">Thoughtful lawn care for the place you call home. We keep your yard healthy, tidy, and ready for whatever the weekend brings.</p>
+        <div class="hero-actions">
+          <a class="button-lime" href="#quote">Get your free quote <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5"/></svg></a>
+          <a class="text-link" href="#services">Explore our services <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5"/></svg></a>
+        </div>
+      </div>
+      <div class="hero-note"><span class="note-line"></span>Locally rooted. Season after season.</div>
+    </section>
+
+    <section class="trust-strip" id="approach" aria-label="Our commitments">
+      <p class="trust-lead">A lawn you love, without the to-do list.</p>
+      <div class="trust-items">
+        <span class="trust-item"><span class="check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 8 3 3 7-7"/></svg></span>Clear, upfront pricing</span>
+        <span class="trust-item"><span class="check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 8 3 3 7-7"/></svg></span>People who show up</span>
+        <span class="trust-item"><span class="check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 8 3 3 7-7"/></svg></span>Care for every season</span>
+      </div>
+    </section>
+
+    <section class="services" id="services" aria-labelledby="services-title">
+      <div class="section-heading">
+        <p class="eyebrow">The good-ground work</p>
+        <h2 id="services-title">A little care goes a long way.</h2>
+        <p class="section-intro">The right care, at the right time. Pick what your yard needs and leave the rest to us.</p>
+      </div>
+      <div class="service-list">
+        <article class="service-row">
+          <span class="service-number">01</span>
+          <div><h3>Mowing &amp; edging</h3><p>Neat lines, healthy height, and a tidy finish every visit.</p></div>
+          <span class="service-arrow" aria-hidden="true">↗</span>
+        </article>
+        <article class="service-row">
+          <span class="service-number">02</span>
+          <div><h3>Lawn treatments</h3><p>Seasonal feeding and weed care tailored to your lawn.</p></div>
+          <span class="service-arrow" aria-hidden="true">↗</span>
+        </article>
+        <article class="service-row">
+          <span class="service-number">03</span>
+          <div><h3>Cleanups &amp; seasonal care</h3><p>Fresh starts in spring, crisp finishes in fall.</p></div>
+          <span class="service-arrow" aria-hidden="true">↗</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="quote-section" id="quote" aria-labelledby="quote-title">
+      <div class="quote-copy">
+        <p class="eyebrow">Let's get growing</p>
+        <h2 id="quote-title">Your yard's next chapter starts here.</h2>
+        <p>Tell us a little about your place. A real person from our team will be in touch to talk through what it needs.</p>
+      </div>
+      <form class="quote-form" id="quote-form">
+        <div class="field">
+          <label for="customer-name">Your name</label>
+          <input id="customer-name" name="name" autocomplete="name" placeholder="Jamie Rivera" required>
+        </div>
+        <div class="field">
+          <label for="customer-phone">Phone number</label>
+          <input id="customer-phone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 000-0000" required>
+        </div>
+        <div class="field field-wide">
+          <label for="service-type">What can we help with?</label>
+          <select id="service-type" name="service" required>
+            <option value="" selected disabled>Choose a service</option>
+            <option>Mowing &amp; edging</option>
+            <option>Lawn treatments</option>
+            <option>Cleanup &amp; seasonal care</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <button class="button-lime form-submit" type="submit">Request my quote <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5"/></svg></button>
+        <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V9m0 7c-5 0-7-3-7-7 4 0 7 2 7 7Zm0-3c0-5 3-8 8-8 0 5-3 8-8 8Z"/></svg></span><span>fieldnote <span style="font-weight:500">lawn co.</span></span></a>
+    <span>Good ground takes good care. © 2026 Fieldnote Lawn Co.</span>
+    <div class="footer-links"><a href="tel:+15550148270">Call us</a><a href="#quote">Get a quote</a></div>
+  </footer>
+  <script>
+    const quoteForm = document.querySelector("#quote-form");
+    const formMessage = document.querySelector("#form-message");
+
+    quoteForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const customerName = new FormData(quoteForm).get("name").trim();
+      formMessage.textContent = `Thanks, ${customerName}. Your request is ready; please call us at (555) 014-8270 to complete your quote.`;
+      quoteForm.reset();
+    });
+  </script>
+</body>
+</html>
